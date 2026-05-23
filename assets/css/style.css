@@ -51,6 +51,29 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Dài quá sẽ thêm dấu ... và giới hạn số lượng dòng hiển thị là 1 */
+.line-clamp {
+  display: -webkit-box;
+  /* giới hạn số lượng dòng hiển thị là 1 */
+  -webkit-line-clamp: var(--line-clamp, 1);
+  line-clamp: var(--line-clamp, 1);
+  /* Kết hợp với display: -webkit-box để sắp xếp các dòng chữ theo chiều dọc */
+  -webkit-box-orient: vertical;
+  /* Ẩn đi toàn bộ phần chữ dư thừa bị tràn ra ngoài sau khi đã bị cắt. */
+  overflow: hidden;
+}
+
+/* Văn bản sẽ được hiển thị tối đa 2 dòng rồi mới xuất hiện dấu ba chấm ... */
+.line-clamp.line-2{
+  --line-clamp:2;
+}
+
+/* Nếu mà đoạn văn có từ dài quá thì sẽ không làm vỡ giao diện */
+.break-all{
+  word-break: break-all;
+}
+
 /* ==================header================== */
 .header {
   background: #fffcf4;
@@ -291,12 +314,13 @@ a {
   gap: 30px;
 }
 .popular .course-item {
+  flex: 1;
   border-radius: 12px;
   background: #fff;
   border: 1px solid #e2dfda;
 }
 
-.popular .course-item:hover{
+.popular .course-item:hover {
   border: 1px solid transparent;
   border-radius: 12px;
   background: #fff;
@@ -315,48 +339,47 @@ a {
 }
 
 .popular .course-item .foot,
-.popular .course-item .rating, 
+.popular .course-item .rating,
 .popular .course-item .head {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.popular .course-item .title a{
+.popular .course-item .title a {
   color: #171100;
   font-weight: 600;
   font-size: 1.8rem;
   line-height: 1.67;
-  
 }
-.popular .rating .value{
+.popular .rating .value {
   margin-left: 6px;
   color: #fea31b;
   font-style: 16px;
   line-height: 1.75;
 }
-.popular .course-item .desc{
+.popular .course-item .desc {
   margin-top: 6px;
-  color:#5f5b53;
+  color: #5f5b53;
   font-style: 1.4rem;
   line-height: 1.86;
 }
 
-.popular .course-item .foot{
+.popular .course-item .foot {
   margin-top: 12px;
 }
 
-.popular .course-item .price{
-  color:#171100;
+.popular .course-item .price {
+  color: #171100;
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.67;
 }
 
-.popular .course-item .btn-book{
+.popular .course-item .btn-book {
   border: none;
 }
 
-.popular .course-item .btn-book:hover{
+.popular .course-item .btn-book:hover {
   background: var(--primary-color);
 }
