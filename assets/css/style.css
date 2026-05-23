@@ -438,9 +438,22 @@ a {
   width: 66%;
   margin-left: auto;
 }
+
 .feedback-item blockquote{
   color: #fff;
   font-style: 2.6rem;
   font-style: italic;
   line-height: 1.54;
+}
+
+.feedback-list{
+  display: flex;
+  overflow: hidden;
+}
+
+.feedback-item{
+  width: 100%;
+  display: flex;
+  /* trong item moi duoc */
+  flex-shrink: 0;
 }
